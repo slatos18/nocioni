@@ -50,6 +50,7 @@ select:focus-visible {
 }
 
 /* Vintage sports typography */
+
 .sports-display {
   font-family: "Barlow Condensed", Impact, sans-serif;
   font-weight: 900;
@@ -73,6 +74,7 @@ select:focus-visible {
 }
 
 /* Subtle printed-poster texture */
+
 .nocioni-page {
   min-height: 100vh;
   background-color: #090909;
@@ -91,6 +93,8 @@ select:focus-visible {
   padding-left: 28px;
   padding-right: 28px;
 }
+
+/* HEADER */
 
 .nocioni-header {
   border-bottom: 5px solid var(--red-bright);
@@ -128,6 +132,8 @@ select:focus-visible {
   white-space: nowrap;
 }
 
+/* CONTENT */
+
 .nocioni-content {
   padding-top: 20px;
   padding-bottom: 60px;
@@ -158,6 +164,8 @@ select:focus-visible {
   min-width: 0;
 }
 
+/* MATCHUP WEEK SELECTOR */
+
 .matchup-selector {
   border-left: 2px solid #777;
   padding-left: 24px;
@@ -177,6 +185,8 @@ select:focus-visible {
   text-transform: uppercase;
   min-width: 145px;
 }
+
+/* DESKTOP CATEGORY BUTTONS */
 
 .category-strip {
   display: grid;
@@ -203,6 +213,14 @@ select:focus-visible {
   border-color: #f4f0e8;
   box-shadow: inset 0 0 0 1px #ed174c;
 }
+
+/* Hide mobile dropdown on desktop */
+
+.mobile-category-selector {
+  display: none;
+}
+
+/* LEADERBOARD */
 
 .leaderboard {
   border: 1px solid #777;
@@ -278,6 +296,8 @@ select:focus-visible {
   font-size: 17px;
 }
 
+/* FOOTER */
+
 .nocioni-footer {
   margin-top: 24px;
   text-align: center;
@@ -286,6 +306,8 @@ select:focus-visible {
   font-size: 15px;
   letter-spacing: 0.14em;
 }
+
+/* TABLET */
 
 @media (max-width: 950px) {
   .nocioni-tagline {
@@ -305,27 +327,35 @@ select:focus-visible {
   }
 }
 
+/* MOBILE — IPHONE AND SMALL SCREENS */
+
 @media (max-width: 600px) {
   .nocioni-container {
     padding-left: 14px;
     padding-right: 14px;
   }
 
+  /* Compact header */
+
   .nocioni-header-inner {
-    gap: 12px;
+    gap: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
   .nocioni-brand {
-    font-size: 58px;
+    font-size: clamp(38px, 10vw, 48px);
   }
 
   .nocioni-season {
-    padding-left: 12px;
+    padding-left: 10px;
   }
 
+  /* Compact matchup heading */
+
   .nocioni-mugshot {
-    width: 76px;
-    height: 76px;
+    width: 64px;
+    height: 64px;
   }
 
   .leaders-heading {
@@ -333,7 +363,7 @@ select:focus-visible {
   }
 
   .leaders-title {
-    font-size: 43px;
+    font-size: 38px;
   }
 
   .matchup-selector {
@@ -342,19 +372,56 @@ select:focus-visible {
     width: 100%;
   }
 
+  /* Replace category buttons with dropdown */
+
   .category-strip {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: none;
   }
 
-  .category-button {
-    font-size: 25px;
+  .mobile-category-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 16px 0 20px;
   }
 
-  .leaderboard-table th {
-    font-size: 16px;
-  }
-
-  .leaderboard-table td {
+  .mobile-category-selector label {
+    color: #ed174c;
     font-size: 17px;
+  }
+
+  .mobile-category-select {
+    width: 100%;
+    min-width: 0;
+    font-size: 24px;
+    padding: 12px;
+    background: #111;
+    border: 2px solid #ddd;
+    color: #f4f0e8;
+  }
+
+  /* Make leaderboard fit the phone */
+
+  .leaderboard-table {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 9px 5px;
+    font-size: 13px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .leaderboard-table .rank-cell,
+  .leaderboard-table .stat-cell {
+    font-size: 21px;
+  }
+
+  .leaderboard-table .team-cell {
+    font-size: 12px;
   }
 }

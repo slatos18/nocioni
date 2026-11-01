@@ -320,7 +320,28 @@ export default function Home() {
             )}
           </div>
         </section>
+{/* MOBILE CATEGORY DROPDOWN */}
+<div className="mobile-category-selector">
+  <label
+    htmlFor="mobile-category"
+    className="sports-label"
+  >
+    SELECT STAT CATEGORY
+  </label>
 
+  <select
+    id="mobile-category"
+    className="matchup-select mobile-category-select"
+    value={category}
+    onChange={(event) => setCategory(event.target.value)}
+  >
+    {categories.map((item) => (
+      <option key={item} value={item}>
+        {item}
+      </option>
+    ))}
+  </select>
+</div>
         {/* NINE FANTASY CATEGORIES */}
         <nav
           className="category-strip"
