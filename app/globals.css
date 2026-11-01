@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --black: #090909;
+  --surface: #141414;
+  --red: #ce1141;
+  --red-bright: #ed174c;
+  --cream: #f4f0e8;
+  --muted: #999999;
+  --border: #454545;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--cream);
+  font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.15);
+}
+
+button:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--red-bright);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--red);
+  color: white;
+}
+
+/* Vintage sports typography */
+.sports-display {
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  line-height: 0.95;
+  font-stretch: condensed;
+}
+
+.sports-label {
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+}
+
+.vintage-text {
+  font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* Subtle printed-poster texture */
+.nocioni-page {
+  min-height: 100vh;
+  background-color: #090909;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.012) 0px,
+    rgba(255, 255, 255, 0.012) 1px,
+    transparent 1px,
+    transparent 5px
+  );
+}
+
+.nocioni-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.nocioni-header {
+  border-bottom: 5px solid var(--red-bright);
+  background: #0b0b0b;
+}
+
+.nocioni-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+
+.nocioni-brand {
+  font-size: clamp(58px, 7.5vw, 105px);
+  margin: 0;
+  color: var(--cream);
+}
+
+.nocioni-season {
+  border-left: 2px solid #777;
+  padding-left: 22px;
+}
+
+.nocioni-tagline {
+  margin-left: auto;
+  color: var(--cream);
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 0.17em;
+  font-size: 19px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.nocioni-content {
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+.leaders-heading {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin-bottom: 16px;
+}
+
+.nocioni-mugshot {
+  width: 112px;
+  height: 112px;
+  object-fit: cover;
+  border: 3px solid var(--red-bright);
+  flex-shrink: 0;
+}
+
+.leaders-title {
+  margin: 3px 0 4px;
+  font-size: clamp(43px, 5.5vw, 79px);
+}
+
+.leaders-heading-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.matchup-selector {
+  border-left: 2px solid #777;
+  padding-left: 24px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.matchup-select {
+  background: #090909;
+  color: var(--cream);
+  border: 2px solid var(--cream);
+  border-radius: 5px;
+  padding: 8px 30px 8px 12px;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  text-transform: uppercase;
+  min-width: 145px;
+}
+
+.category-strip {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 8px;
+  margin: 14px 0 18px;
+}
+
+.category-button {
+  min-width: 0;
+  padding: 8px 4px;
+  background: #111;
+  color: var(--cream);
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-weight: 900;
+  font-size: clamp(19px, 2.4vw, 33px);
+  line-height: 1.1;
+}
+
+.category-button.active {
+  background: #c90030;
+  border-color: #f4f0e8;
+  box-shadow: inset 0 0 0 1px #ed174c;
+}
+
+.leaderboard {
+  border: 1px solid #777;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #0e0e0e;
+}
+
+.leaderboard-banner {
+  background: #b8002c;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.leaderboard-table-wrap {
+  overflow-x: auto;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 680px;
+}
+
+.leaderboard-table th {
+  text-align: left;
+  padding: 10px 16px;
+  color: #aaa;
+  background: #151515;
+  border-bottom: 1px solid #666;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.leaderboard-table td {
+  padding: 8px 16px;
+  border-bottom: 1px solid #4a4a4a;
+  color: var(--cream);
+  font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.leaderboard-table tbody tr:nth-child(even) {
+  background: #151515;
+}
+
+.leaderboard-table tbody tr:hover {
+  background: #25151a;
+}
+
+.leaderboard-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.leaderboard-table .rank-cell,
+.leaderboard-table .stat-cell {
+  color: var(--red-bright);
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: 29px;
+  font-weight: 900;
+}
+
+.leaderboard-table .team-cell {
+  font-size: 17px;
+}
+
+.nocioni-footer {
+  margin-top: 24px;
+  text-align: center;
+  color: #777;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+}
+
+@media (max-width: 950px) {
+  .nocioni-tagline {
+    display: none;
+  }
+
+  .leaders-heading {
+    flex-wrap: wrap;
+  }
+
+  .matchup-selector {
+    margin-left: 0;
+  }
+
+  .category-strip {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .nocioni-container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .nocioni-header-inner {
+    gap: 12px;
+  }
+
+  .nocioni-brand {
+    font-size: 58px;
+  }
+
+  .nocioni-season {
+    padding-left: 12px;
+  }
+
+  .nocioni-mugshot {
+    width: 76px;
+    height: 76px;
+  }
+
+  .leaders-heading {
+    gap: 12px;
+  }
+
+  .leaders-title {
+    font-size: 43px;
+  }
+
+  .matchup-selector {
+    border-left: none;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .category-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .category-button {
+    font-size: 25px;
+  }
+
+  .leaderboard-table th {
+    font-size: 16px;
+  }
+
+  .leaderboard-table td {
+    font-size: 17px;
+  }
+}
